@@ -1,1 +1,17 @@
+library(readxl)
+setwd('C:\\Users\\Administrator\\Desktop\\d123')
+getwd()
+
+tb_datasets <- data.frame()
+
+for (i in 1:length(list.files())){
+  
+    tb <- read_excel(list.files(full.names = TRUE)[i],skip = 1,col_names=TRUE)[1,1:5]
+    tb_datasets <- rbind(tb_datasets,tb)
+    tb_datasets
+    
+}
+
+
+tb04 <- read_excel(list.files(full.names = TRUE)[1],skip = 1,col_names=TRUE)[1,1:5]
 
